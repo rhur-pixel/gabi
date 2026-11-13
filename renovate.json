@@ -15,6 +15,11 @@
       "description": "gabi production scoping: only the shared-pipelines pin automerges, everything else stays review-gated",
       "excludeDepNames": ["https://github.com/app-sre/shared-pipelines"],
       "automerge": false
+    },
+    {
+      "description": "FORK TEST ONLY: go binary unavailable in local run environment — gomod crashes the run without it",
+      "matchManagers": ["gomod"],
+      "enabled": false
     }
   ],
   "lockFileMaintenance": {
