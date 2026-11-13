@@ -1,29 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"],
-  "packageRules": [
-    {
-      "description": "FORK TEST ONLY (Phase C): re-enable and arm the shared-pipelines pin — the preset's rollout-scope rule disables it on rhur-pixel/gabi",
-      "matchDepNames": ["https://github.com/app-sre/shared-pipelines"],
-      "enabled": true,
-      "pinDigests": true,
-      "groupName": "shared-pipelines-pin",
-      "groupSlug": "shared-pipelines-pin",
-      "automerge": true
-    },
-    {
-      "description": "gabi production scoping: only the shared-pipelines pin automerges, everything else stays review-gated",
-      "excludeDepNames": ["https://github.com/app-sre/shared-pipelines"],
-      "automerge": false
-    },
-    {
-      "description": "FORK TEST ONLY: go binary unavailable in local run environment — gomod crashes the run without it",
-      "matchManagers": ["gomod"],
-      "enabled": false
-    }
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": false
-  }
+  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"]
 }
