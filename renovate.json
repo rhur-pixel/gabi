@@ -1,19 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"],
-  "packageRules": [
-    {
-      "description": "gabi production scoping: only the shared-pipelines pin automerges",
-      "excludeDepNames": ["https://github.com/app-sre/shared-pipelines"],
-      "automerge": false
-    },
-    {
-      "description": "FORK-ONLY Phase D: re-arm pin dep (preset rule 2 is scoped to app-sre/*, not this fork)",
-      "matchDepNames": ["https://github.com/app-sre/shared-pipelines"],
-      "enabled": true,
-      "pinDigests": true,
-      "automerge": true
-    }
-  ],
-  "lockFileMaintenance": {"enabled": true, "automerge": false}
+  "extends": ["github>app-sre/shared-pipelines//renovate/default.json"]
 }
